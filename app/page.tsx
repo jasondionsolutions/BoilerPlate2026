@@ -50,7 +50,7 @@ export default async function Home() {
         </div>
 
         <footer className="text-muted-foreground pt-12 text-xs">
-          <p>Built with Next.js 15, Modular Architecture, and ❤️ by you.</p>
+          <p>Built with Next.js 16, Modular Architecture, and ❤️ by you.</p>
         </footer>
       </main>
     </div>

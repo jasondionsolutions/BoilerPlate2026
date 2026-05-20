@@ -52,6 +52,14 @@
   },
   "resolutions": {
     "js-yaml": "^4.1.1",
-    "@eslint/plugin-kit": "^0.3.4"
+    "@eslint/plugin-kit": "^0.3.4",
+    "minimatch": "^9.0.5",
+    "brace-expansion": "^2.0.2",
+    "effect": "^3.21.2",
+    "flatted": "^3.4.2",
+    "picomatch": "^4.0.4",
+    "defu": "^6.1.7",
+    "postcss": "^8.5.15",
+    "ajv": "^6.15.0"
   }
 }
