@@ -17,11 +17,6 @@ const nextConfig: NextConfig = {
     // Set to true if you want builds to succeed even with TS errors
     ignoreBuildErrors: false,
   },
-
-  eslint: {
-    // Set to true if you want builds to skip ESLint errors
-    ignoreDuringBuilds: false,
-  },
 };
 
 export default nextConfig;

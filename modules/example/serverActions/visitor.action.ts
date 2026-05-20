@@ -6,7 +6,6 @@ import { withAccess } from "@/lib/middleware/withAccess";
 import { AuthContext } from "@/lib/auth/types";
 import {
   submitNameSchema,
-  type SubmitNameInput,
   type SubmitNameResponse,
 } from "../types/visitor.schema";
 
@@ -17,7 +16,7 @@ import {
 export const submitName = withAccess(
   async (
     user: AuthContext,
-    formData: FormData
+    formData: FormData,
   ): Promise<SubmitNameResponse> => {
     try {
       // Extract and validate input
@@ -49,15 +48,15 @@ export const submitName = withAccess(
         error: "An unexpected error occurred",
       };
     }
-  }
+  },
 );
 
 /**
  * Server action to get the current visitor name from cookie
  */
 export const getVisitorName = withAccess(
-  async (user: AuthContext): Promise<string | null> => {
+  async (_user: AuthContext): Promise<string | null> => {
     const cookieStore = await cookies();
     return cookieStore.get("visitor_name")?.value || null;
-  }
+  },
 );

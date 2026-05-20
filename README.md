@@ -1,7 +1,7 @@
 # 🛠️ Boilerplate
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.3.0-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Playwright](https://img.shields.io/badge/Tested%20with-Playwright-45ba63?logo=playwright&logoColor=white)](https://playwright.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
@@ -16,20 +16,21 @@ A **Next.js 16**, **React 19**, and **Tailwind CSS v4** starter template, with:
 - ⚙️ Modern Server Actions — cleanly integrated and working out of the box
 
 > This is my personal and production-ready starting point for all modern apps — clean, fast, and independent of any deployment service.
+
 ---
 
 ## 📦 Stack Overview
 
-| Layer              | Tech                                               |
-|-------------------|----------------------------------------------------|
-| Framework         | [Next.js 15](https://nextjs.org/docs)              |
-| UI Primitives     | [Radix UI](https://www.radix-ui.com/primitives)    |
-| Styling           | [Tailwind CSS v4](https://tailwindcss.com/docs)    |
-| Fonts             | Geist Sans + Mono via `next/font/google`           |
-| Dark Mode         | [`next-themes`](https://github.com/pacocoursey/next-themes) |
-| Buttons + Variants| `class-variance-authority` + `clsx` + `tailwind-merge` |
-| Testing           | [Playwright](https://playwright.dev/)              |
-| Linting/Formatting| ESLint Flat Config + Prettier + Tailwind Plugin    |
+| Layer              | Tech                                                        |
+| ------------------ | ----------------------------------------------------------- |
+| Framework          | [Next.js 15](https://nextjs.org/docs)                       |
+| UI Primitives      | [Radix UI](https://www.radix-ui.com/primitives)             |
+| Styling            | [Tailwind CSS v4](https://tailwindcss.com/docs)             |
+| Fonts              | Geist Sans + Mono via `next/font/google`                    |
+| Dark Mode          | [`next-themes`](https://github.com/pacocoursey/next-themes) |
+| Buttons + Variants | `class-variance-authority` + `clsx` + `tailwind-merge`      |
+| Testing            | [Playwright](https://playwright.dev/)                       |
+| Linting/Formatting | ESLint Flat Config + Prettier + Tailwind Plugin             |
 
 ---
 

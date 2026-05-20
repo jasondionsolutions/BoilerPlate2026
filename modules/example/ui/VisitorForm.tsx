@@ -20,13 +20,13 @@ export function VisitorForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <label className="block text-sm font-medium">
-        What's your name?
+        What&apos;s your name?
         <input
           type="text"
           name="name"
           placeholder="Enter your name"
           required
-          className="mt-1 block w-full rounded-md border border-border bg-background px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-ring/50"
+          className="border-border bg-background focus:ring-ring/50 mt-1 block w-full rounded-md border px-3 py-2 text-sm shadow-sm focus:ring focus:outline-none"
         />
       </label>
       <Button type="submit" disabled={isPending} className="w-full">

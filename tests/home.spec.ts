@@ -9,7 +9,7 @@ test("homepage renders correctly", async ({ page }) => {
 
   // Check the presence of your main heading or elements you own
   await expect(
-    page.getByText("Get started by editing", { exact: false })
+    page.getByText("Get started by editing", { exact: false }),
   ).toBeVisible();
 
   // Remove or rewrite button tests that reference Vercel

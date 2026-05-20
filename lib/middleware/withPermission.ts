@@ -7,7 +7,7 @@ import { AuthContext, Permission, PermissionError } from "@/lib/auth/types";
  */
 function checkPermissions(
   userPermissions: string[],
-  required: Permission | Permission[]
+  required: Permission | Permission[],
 ): boolean {
   const requiredPerms = Array.isArray(required) ? required : [required];
   return requiredPerms.every((perm) => userPermissions.includes(perm));
@@ -37,8 +37,8 @@ function checkPermissions(
  * ```
  */
 export function withPermission(required: Permission | Permission[]) {
-  return <Args extends any[], R>(
-    actionFn: (user: AuthContext, ...args: Args) => Promise<R>
+  return <Args extends unknown[], R>(
+    actionFn: (user: AuthContext, ...args: Args) => Promise<R>,
   ) => {
     return async (...args: Args): Promise<R> => {
       const user = await validateSession();

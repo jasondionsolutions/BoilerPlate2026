@@ -5,21 +5,25 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ### Development
+
 - `yarn dev` - Start development server with Turbopack
 - `yarn build` - Create production build
 - `yarn start` - Start production server
 
 ### Code Quality
+
 - `yarn lint` - Run ESLint
 - `yarn typecheck` - Run TypeScript checks without emitting files
 
 ### Testing
+
 - `yarn test` - Run Playwright e2e tests (headless)
 - `yarn test:ui` - Run Playwright tests with interactive UI runner
 - Tests are located in `tests/` directory
 - Base URL for tests: `http://localhost:3000`
 
 ### Database (Prisma)
+
 - `yarn db:generate` - Generate Prisma Client
 - `yarn db:push` - Push schema changes to database (development)
 - `yarn db:studio` - Open Prisma Studio GUI
@@ -29,6 +33,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Architecture
 
 ### Stack
+
 - **Framework**: Next.js 15 (App Router) with React 19
 - **Styling**: Tailwind CSS v4 with JIT compilation
 - **UI Components**: Radix UI primitives + class-variance-authority (CVA)
@@ -44,6 +49,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **NO APIs - Server Actions Only**: This codebase uses ONLY Next.js Server Actions for all backend operations. No REST or API routes.
 
 **Feature Modules**: All features are isolated under `/modules/[feature]/` with:
+
 - `/ui` - Feature-local components
 - `/hooks` - Client hooks (bridge between components and server actions)
 - `/serverActions` - All CRUD operations, business logic, calculations
@@ -52,6 +58,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `/services` - Business logic orchestration (if needed)
 
 **Architecture Layers** (strict separation):
+
 1. **Components (UI only)** - Consume data from hooks, no direct server action calls
 2. **Hooks** - Bridge layer that calls server actions and manages client state
 3. **Server Actions** - All calculations, algorithms, processing, database operations
@@ -63,21 +70,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```typescript
 // Start with withAccess() for basic auth
-export const createBook = withAccess(async (
-  user: AuthContext,
-  input: CreateBookInput
-) => {
-  const validated = createBookSchema.parse(input);
-  const book = await prisma.book.create({
-    data: { ...validated, createdById: user.userId }
-  });
-  return { data: book, success: true };
-});
+export const createBook = withAccess(
+  async (user: AuthContext, input: CreateBookInput) => {
+    const validated = createBookSchema.parse(input);
+    const book = await prisma.book.create({
+      data: { ...validated, createdById: user.userId },
+    });
+    return { data: book, success: true };
+  },
+);
 
 // Upgrade to withPermission() for strict RBAC
-export const deleteBook = withPermission('books.delete')(async (
+export const deleteBook = withPermission("books.delete")(async (
   user: AuthContext,
-  bookId: string
+  bookId: string,
 ) => {
   await prisma.book.delete({ where: { id: bookId } });
   return { success: true };
@@ -92,7 +98,7 @@ export function useCreateBook() {
   return useMutation({
     mutationFn: (input: CreateBookInput) => createBook(input),
     onError: (e) => toast.error(e.message),
-    onSuccess: () => toast.success("Book created")
+    onSuccess: () => toast.success("Book created"),
   });
 }
 
@@ -108,12 +114,12 @@ function BookForm() {
 ```typescript
 // ✅ User-specific data
 await prisma.examSession.findMany({
-  where: { userId: user.userId }
+  where: { userId: user.userId },
 });
 
 // ✅ Admin operations with permission check
 await prisma.book.findMany({
-  where: user.roles.includes('admin') ? {} : { status: 'active' }
+  where: user.roles.includes("admin") ? {} : { status: "active" },
 });
 ```
 
@@ -124,6 +130,7 @@ await prisma.book.findMany({
 ### Directory Structure
 
 **Modular Structure** (current implementation):
+
 - `app/` - Next.js App Router pages and layouts
 - `modules/[feature]/` - Feature-isolated domains
   - `modules/[feature]/ui/` - Feature components (client components)
@@ -144,6 +151,7 @@ await prisma.book.findMany({
 ### Architecture Compliance Rules
 
 **Critical Violations to Avoid**:
+
 - ❌ Complex calculations in client components or store slices
 - ❌ setState in render cycles
 - ❌ Direct server action imports in components (use hooks)
@@ -151,6 +159,7 @@ await prisma.book.findMany({
 - ❌ Async operations in store slices
 
 **Required Patterns**:
+
 - ✅ Store Slices: Pure state management only (sync operations)
 - ✅ Server Actions: All calculations, algorithms, database operations
 - ✅ Hooks: Bridge between components and server actions/store
@@ -179,6 +188,7 @@ class UnauthorizedError extends Error {}
 ```
 
 ### Philosophy
+
 - **Security First**: Always RBAC + user context validation
 - **Modular Design**: Features are isolated and self-contained
 - **Server-Only Logic**: Never expose core logic to client
