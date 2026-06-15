@@ -34,7 +34,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Stack
 
-- **Framework**: Next.js 15 (App Router) with React 19
+- **Framework**: Next.js 16 (App Router) with React 19
 - **Styling**: Tailwind CSS v4 with JIT compilation
 - **UI Components**: Radix UI primitives + class-variance-authority (CVA)
 - **Theming**: next-themes for dark mode support
