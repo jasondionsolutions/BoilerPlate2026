@@ -23,7 +23,7 @@ A **Next.js 16**, **React 19**, and **Tailwind CSS v4** starter template, with:
 
 | Layer              | Tech                                                        |
 | ------------------ | ----------------------------------------------------------- |
-| Framework          | [Next.js 15](https://nextjs.org/docs)                       |
+| Framework          | [Next.js 16](https://nextjs.org/docs)                       |
 | UI Primitives      | [Radix UI](https://www.radix-ui.com/primitives)             |
 | Styling            | [Tailwind CSS v4](https://tailwindcss.com/docs)             |
 | Fonts              | Geist Sans + Mono via `next/font/google`                    |
@@ -31,6 +31,27 @@ A **Next.js 16**, **React 19**, and **Tailwind CSS v4** starter template, with:
 | Buttons + Variants | `class-variance-authority` + `clsx` + `tailwind-merge`      |
 | Testing            | [Playwright](https://playwright.dev/)                       |
 | Linting/Formatting | ESLint Flat Config + Prettier + Tailwind Plugin             |
+
+---
+
+## 🧰 Recommended Tools
+
+External services this boilerplate is designed to plug into. Pick what your app needs — none are required to run the starter locally.
+
+| Service | Purpose |
+| --- | --- |
+| [Vercel](https://vercel.com) | Hosting & deployments |
+| [Neon](https://neon.tech) | Serverless Postgres database |
+| [Clerk](https://clerk.com) | Authentication & user management |
+| [Stripe](https://stripe.com) | Payments & billing |
+| [Resend](https://resend.com) | Transactional email |
+| [Cloudflare](https://cloudflare.com) | Domain / DNS + R2 object storage |
+| [Bunny.net](https://bunny.net) | Video streaming (Stream) |
+| [Claude](https://claude.com) | AI (Anthropic) |
+| [Sentry](https://sentry.io) | Error monitoring |
+| [Checkly](https://checklyhq.com) | Uptime & synthetic monitoring |
+| [GitHub](https://github.com) | Source control & CI |
+| [MongoDB Atlas](https://www.mongodb.com/atlas) | Managed document database |
 
 ---
 
@@ -89,7 +110,7 @@ Used directly in `app/page.tsx` via:
 
 ```
 .
-├── app/                  # App Router (Next.js 15)
+├── app/                  # App Router (Next.js 16)
 │   ├── layout.tsx
 │   ├── page.tsx          # Tailwind test + server action demo
 │   └── loading.tsx
@@ -137,7 +158,7 @@ MIT — yours to hack, ship, and scale. Contributions welcome.
 
 ## ✨ Created & Maintained By
 
-**@nimda** — I use this as my go-to starter for real apps.  
+**@jasondionsolutions** — I use this as my go-to starter for real apps.  
 Modern, unbranded, and ready for everything from ideas to production.
 
 ---
@@ -145,6 +166,6 @@ Modern, unbranded, and ready for everything from ideas to production.
 ## 📦 Clone This
 
 ```bash
-npx degit nimda/hackme my-app
+npx degit jasondionsolutions/boilerplate2026 my-app
 cd my-app && yarn install
 ```
