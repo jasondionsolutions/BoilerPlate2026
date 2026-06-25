@@ -34,6 +34,27 @@ A **Next.js 16**, **React 19**, and **Tailwind CSS v4** starter template, with:
 
 ---
 
+## 🧰 Recommended Tools
+
+External services this boilerplate is designed to plug into. Pick what your app needs — none are required to run the starter locally.
+
+| Service | Purpose |
+| --- | --- |
+| [Vercel](https://vercel.com) | Hosting & deployments |
+| [Neon](https://neon.tech) | Serverless Postgres database |
+| [Clerk](https://clerk.com) | Authentication & user management |
+| [Stripe](https://stripe.com) | Payments & billing |
+| [Resend](https://resend.com) | Transactional email |
+| [Cloudflare](https://cloudflare.com) | Domain / DNS + R2 object storage |
+| [Bunny.net](https://bunny.net) | Video streaming (Stream) |
+| [Claude](https://claude.com) | AI (Anthropic) |
+| [Sentry](https://sentry.io) | Error monitoring |
+| [Checkly](https://checklyhq.com) | Uptime & synthetic monitoring |
+| [GitHub](https://github.com) | Source control & CI |
+| [MongoDB Atlas](https://www.mongodb.com/atlas) | Managed document database |
+
+---
+
 ## 🚀 Getting Started
 
 ```bash
